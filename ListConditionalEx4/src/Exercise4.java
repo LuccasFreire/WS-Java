@@ -22,6 +22,7 @@ public class Exercise4 {
 		else {
 			System.out.println("O jogo durou 24 horas!");
 		}
+		kb.close();
 	}
 
 }

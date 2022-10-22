@@ -22,10 +22,10 @@ public class Exercise5 {
 			double price = ((double) quant * 5.00);
 			System.out.printf("Total: %.2f", price);
 		}
-		else if (code == 4) {
-			double price = ((double) quant * 2.00);
-			System.out.printf("Total: %.2f", price);
-		}
+			else if (code == 4) {
+				double price = ((double) quant * 2.00);
+				System.out.printf("Total: %.2f", price);
+			}
 		else if (code == 5) {
 			double price = ((double) quant * 1.50);
 			System.out.printf("Total: %.2f", price);
@@ -33,7 +33,7 @@ public class Exercise5 {
 		else {
 			System.out.println("Wrong code, type from 1 to 5!");
 		}
-	
+		kb.close();
 	}
 
 }

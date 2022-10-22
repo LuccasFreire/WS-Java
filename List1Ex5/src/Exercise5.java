@@ -37,6 +37,6 @@ codigo de uma peça 2, o numero de pecas 2 e o valor unitario de cada peca 2. Ca
 		System.out.printf("TOTAL VALUE TO BE PAID OF THE FIRST ITEM: R$ %.2f%n", totalPriceItem1);
 		System.out.printf("TOTAL VALUE TO BE PAID OF THE SECOND ITEM: R$ %.2f%n", totalPriceItem2);
 		System.out.printf("TOTAL VALUE TO BE PAID OF BOTH THE ITEMS: R$ %.2f", totalPrice);
+		kb.close();
 	}
-
 }

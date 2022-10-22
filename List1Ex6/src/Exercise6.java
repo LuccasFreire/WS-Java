@@ -26,7 +26,7 @@ public class Exercise6 {
 		rectangleArea = (A * B);
 		
 		System.out.printf("TRIANGLE: %.3f%nCIRCLE: %.3f%nTRAPEZOID: %.3f%nSQUARE: %.3f%nRECTANGLE: %.3f ",triangleArea, circleArea, trapezoidArea, squareArea, rectangleArea);
-		
+		kb.close();
 	}
 
 }

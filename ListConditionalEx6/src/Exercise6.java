@@ -23,6 +23,7 @@ public class Exercise6 {
 		else {
 			System.out.println("The number you typed is out of the rage");
 		}
+		kb.close();
 	}
 
 }
