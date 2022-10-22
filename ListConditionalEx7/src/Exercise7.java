@@ -28,6 +28,7 @@ public class Exercise7 {
 		else {
 			System.out.println("Origin");
 		}
+		kb.close();
 		
 	}
 
