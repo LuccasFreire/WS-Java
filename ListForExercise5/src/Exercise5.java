@@ -8,7 +8,7 @@ public class Exercise5 {
 		
 		System.out.println("Insert the number you want to see the factorial: ");
 		num = kb.nextInt();
-		
+		kb.close();
 		int c = num;
 		for (; c >= 0; c--) {
 			factorial = factorial * num;
@@ -16,6 +16,7 @@ public class Exercise5 {
 			
 			System.out.println(factorial);
 		}
+		
 	}
 
 }
