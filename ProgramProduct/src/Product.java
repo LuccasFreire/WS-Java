@@ -10,8 +10,13 @@ public class Product {
 		this.quantity = quantity;
 	}
 	
+	public Product (String name, double price) {
+		this.name = name;
+		this.price = price;
+	}
+	
 	public String toString() {
-		return "Name: " + name + ", Price: $ "+ price + " Quantity: " + quantity + " Total Price: $ " + totalValue();
+		return "Name: " + name + "\nPrice: $"+ String.format("%.2f", price) + "\nQuantity: " + quantity + "\nTotal Price: $" + String.format("%.2f", totalValue());
 		//return "Name: " + name + ", Price: $ "+ String.format("%.2f", price) + " Quantity: " + quantity + " Total Price: $ " + String.format("%.2f", totalValue());
 		// shows the string formated to 2 decimal floats
 	}

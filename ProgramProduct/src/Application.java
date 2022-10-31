@@ -14,10 +14,7 @@ public class Application {
 		System.out.print("Price: ");
 		double price = kb.nextDouble();
 		
-		System.out.print("Quantity in stock: ");
-		int quantity = kb.nextInt();
-		
-		Product product = new Product(name, price, quantity);
+		Product product = new Product(name, price);
 		
 		System.out.println(product.toString());
 		
@@ -27,7 +24,7 @@ public class Application {
 		
 		System.out.println(product.toString());
 		
-		System.out.println("Enter the number of products to be removed from the stock: ");
+		System.out.println("Enter the number of products to be removed from stock: ");
 		product.removeProducts(kb.nextInt());
 		
 		System.out.println(product.toString());
