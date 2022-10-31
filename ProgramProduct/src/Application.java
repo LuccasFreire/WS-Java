@@ -4,18 +4,20 @@ public class Application {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner kb = new Scanner(System.in);
-		Product product = new Product();
+		
 		
 		System.out.println("Enter the product infos: ");
 		
 		System.out.print("Name: ");
-		product.name = kb.next();
+		String name = kb.next();
 		
 		System.out.print("Price: ");
-		product.price = kb.nextDouble();
+		double price = kb.nextDouble();
 		
 		System.out.print("Quantity in stock: ");
-		product.quantity = kb.nextInt();
+		int quantity = kb.nextInt();
+		
+		Product product = new Product(name, price, quantity);
 		
 		System.out.println(product.toString());
 		
@@ -26,8 +28,8 @@ public class Application {
 		System.out.println(product.toString());
 		
 		System.out.println("Enter the number of products to be removed from the stock: ");
-		
 		product.removeProducts(kb.nextInt());
+		
 		System.out.println(product.toString());
 		
 		kb.close();
