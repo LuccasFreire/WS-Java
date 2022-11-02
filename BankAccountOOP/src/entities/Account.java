@@ -6,6 +6,20 @@ public class Account {
 	private double amount;
 	private double balance;
 	
+	public Account(int accountNum, String accountHolder, double amount) {
+		this.accountNum = accountNum;
+		this.accountHolder = accountHolder;
+		this.amount = amount;
+	}
+	public Account(int accountNum, String accountHolder) {
+		this.accountNum = accountNum;
+		this.accountHolder = accountHolder;
+		this.amount = 0.0; 
+	}
+	public Account(double amount) {
+		
+	}
+	
 	public void setAccountNum(int num) {
 		this.accountNum = num;
 	}
@@ -27,7 +41,7 @@ public class Account {
 	public double getBalance() {
 		return balance;
 	}
-	public void makeDeposit(double amount) {
+	public void makeDeposit() {
 		this.balance += amount;
 	}
 	public void makeWithdraw(double amount) {
