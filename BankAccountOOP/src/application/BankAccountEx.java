@@ -9,10 +9,13 @@ public class BankAccountEx {
 		Scanner kb = new Scanner(System.in);
 		System.out.print("Enter account number: ");
 		int accountNum = kb.nextInt();
-		System.out.println("Enter account holder: ");
-		String accountHolder = kb.nextLine();
+		
+		System.out.print("Enter account holder: ");
+		String accountHolder = kb.next();
+		
 		System.out.println("Is there an initial deposit (Y/N)? ");
 		String logical = kb.next().toLowerCase();
+		
 		
 		if (logical != "n") {
 			System.out.println("Enter initial deposit: ");
@@ -25,6 +28,18 @@ public class BankAccountEx {
 			account1.makeDeposit();
 		}
 		
+		System.out.println("Enter deposit value: ");
+		double amount = kb.nextDouble();
+		Account account1 = new Account(amount);
+		account1.makeDeposit();
+		
+		System.out.println(account1.toString());
+		
+		System.out.println("Enter a withdraw value: ");
+		amount = kb.nextDouble();
+		account1.makeWithdraw(amount);
+
+		System.out.println(account1.toString());
 		kb.close();
 	}
 

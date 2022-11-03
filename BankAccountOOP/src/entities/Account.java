@@ -17,7 +17,10 @@ public class Account {
 		this.amount = 0.0; 
 	}
 	public Account(double amount) {
-		
+		this.amount = amount;
+	}
+	public String toString() {
+		return "Account " + getAccountNum() + " Holder: " + getAccountHolder() + " Balance: " + String.format("%.2f",getBalance());
 	}
 	
 	public void setAccountNum(int num) {
