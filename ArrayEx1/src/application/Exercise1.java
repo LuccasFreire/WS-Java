@@ -18,7 +18,7 @@ public class Exercise1 {
 		for (int i = 0; i < num; i++) {
 			System.out.printf(i + 1 +" height: ");
 			vector[i] = kb.nextDouble();
-			sumOfHeight = vector[i] += sumOfHeight;
+			sumOfHeight += vector[i];
 		}
 		
 		
