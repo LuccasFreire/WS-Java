@@ -1,6 +1,9 @@
 package application;
 	
+import entities.User;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -48,6 +51,18 @@ public class Main extends Application {
 			
 			GridPane.setHalignment(submit, HPos.RIGHT);
 			root.add(submit, 1, 4);
+			
+			String name = txtfUser.getText();
+			String passw = txtfPass.getText();
+			String temail = txtfEmail.getText();
+			
+			submit.setOnAction(new EventHandler<ActionEvent>() {
+				public void handle(ActionEvent event) {
+					User user = new User(name, passw, temail);
+					DatabaseDAO dbDao = new DatabaseDAO();
+					
+				}
+			});
 			
 			Scene scene = new Scene(root,400,400);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
