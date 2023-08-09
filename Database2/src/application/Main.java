@@ -8,6 +8,7 @@ import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.layout.GridPane;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
@@ -29,9 +30,11 @@ public class Main extends Application {
 			Label userName = new Label("Username: ");
 			TextField txtfUser = new TextField();
 			Label password = new Label("Password: ");
-			TextField txtfPass = new TextField();
+			PasswordField txtfPass = new PasswordField();
 			Label email = new Label("Email: ");
 			TextField txtfEmail = new TextField();
+			Label phone = new Label("Phone: ");
+			TextField txtfPhone = new TextField();
 			Button submit = new Button("Submit");
 			
 			GridPane.setHalignment(userName, HPos.LEFT);
@@ -49,18 +52,26 @@ public class Main extends Application {
 			GridPane.setHalignment(txtfEmail, HPos.RIGHT);
 			root.add(txtfEmail, 1, 3);
 			
+			GridPane.setHalignment(phone, HPos.LEFT);
+			root.add(phone, 0, 4);
+			GridPane.setHalignment(txtfPhone, HPos.RIGHT);
+			root.add(txtfPhone, 1, 4);
+			
 			GridPane.setHalignment(submit, HPos.RIGHT);
-			root.add(submit, 1, 4);
+			root.add(submit, 1, 5);
 			
 			String name = txtfUser.getText();
 			String passw = txtfPass.getText();
 			String temail = txtfEmail.getText();
+			String tphone = txtfPhone.getText();
 			
 			submit.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
-					User user = new User(name, passw, temail);
+					User user = new User(name, passw, temail, tphone);
 					DatabaseDAO dbDao = new DatabaseDAO();
-					
+					String result = dbDao.insert(user);
+					Label lresult = new Label(result);
+					root.add(lresult, 1, 6);
 				}
 			});
 			

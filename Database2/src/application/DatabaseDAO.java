@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import entities.User;
 
 public class DatabaseDAO {
-	private String url = "jdbc:mysql://localhost;3306/userdb";
+	private String url = "jdbc:mysql://localhost:3306/userdb";
 	private String dbName = "root";
 	private String password = "";
 	private String driver = "com.mysql.cj.jdbc.Driver";
@@ -40,13 +40,15 @@ public class DatabaseDAO {
 		Connection con = getConnection();
 		
 		String result = "Data entered successfully";
-		String query =  "INSERT INTO USER VALUES(?,?,?)";
+		String query =  "INSERT INTO user(name,password,email,phone) "
+                + "VALUES(?,?,?,?)";
 		PreparedStatement ps;
 		try {
 			ps = con.prepareStatement(query);
 			ps.setString(1, user.getName());
 			ps.setString(2, user.getPassword());
 			ps.setString(3, user.getPassword());
+			ps.setString(4, user.getPhone());
 			ps.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

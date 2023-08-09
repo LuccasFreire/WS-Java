@@ -1,17 +1,24 @@
 package entities;
 
 public class User {
-	String name, password, email;
+	String name, password, email, phone;
 
 	public User() {
 	}
-	public User(String name, String password, String email) {
+	public User(String name, String password, String email, String phone) {
 		super();
 		this.name = name;
 		this.password = password;
 		this.email = email;
+		this.phone = phone;
 	}
 
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
 	public String getName() {
 		return name;
 	}
