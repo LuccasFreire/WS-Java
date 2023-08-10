@@ -60,16 +60,17 @@ public class Main extends Application {
 			GridPane.setHalignment(submit, HPos.RIGHT);
 			root.add(submit, 1, 5);
 			
-			String name = txtfUser.getText();
-			String passw = txtfPass.getText();
-			String temail = txtfEmail.getText();
-			String tphone = txtfPhone.getText();
+			
 			
 			submit.setOnAction(new EventHandler<ActionEvent>() {
 				public void handle(ActionEvent event) {
-					User user = new User(name, passw, temail, tphone);
+					String name = txtfUser.getText();
+					String passw = txtfPass.getText();
+					String temail = txtfEmail.getText();
+					String tphone = txtfPhone.getText();
+					User usuario = new User(name, passw, temail, tphone);
 					DatabaseDAO dbDao = new DatabaseDAO();
-					String result = dbDao.insert(user);
+					String result = dbDao.insert(usuario);
 					Label lresult = new Label(result);
 					root.add(lresult, 1, 6);
 				}
@@ -79,7 +80,6 @@ public class Main extends Application {
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
 			primaryStage.show();
-			
 			
 		} catch(Exception e) {
 			e.printStackTrace();
